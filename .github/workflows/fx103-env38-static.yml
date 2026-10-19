@@ -2,11 +2,15 @@ name: fx103-env38-static
 on:
   workflow_dispatch:
     inputs:
+      environment:
+        description: Ignored by intentionally static fixture
+        required: false
+        type: string
       helio_execution_id:
         description: Helio correlation id
         required: false
         type: string
-run-name: fx103-env38-static ${{ inputs.helio_execution_id }}
+run-name: ${{ inputs.helio_execution_id }}
 permissions:
   contents: read
   deployments: write
