@@ -1,0 +1,20 @@
+name: fx103-perm20-p2
+on:
+  workflow_dispatch:
+    inputs:
+      helio_execution_id:
+        type: string
+        required: false
+      environment:
+        type: string
+        required: false
+run-name: ${{ inputs.helio_execution_id }}
+permissions:
+  contents: read
+  deployments: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: fx103-perm20-target
+    steps:
+      - run: echo "fx103 synthetic planning fixture only; no deployment"
