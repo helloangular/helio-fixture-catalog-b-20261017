@@ -1,0 +1,29 @@
+name: rem21-scl-05
+run-name: "${{ inputs.helio_execution_id }}"
+on:
+  workflow_dispatch:
+    inputs:
+      helio_execution_id:
+        type: string
+        default: ''
+      helio_release_id:
+        type: string
+        default: ''
+      helio_stage_id:
+        type: string
+        default: ''
+      workflow_revision:
+        type: string
+        default: ''
+      release_version:
+        type: string
+        default: ''
+permissions:
+  contents: read
+jobs:
+  production:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: rem21-scl-05-production
+    steps:
+      - run: echo 'Owned fixture only; no deployment'
