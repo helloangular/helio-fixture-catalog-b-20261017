@@ -3,6 +3,9 @@ run-name: "${{ inputs.helio_execution_id }}"
 on:
   workflow_dispatch:
     inputs:
+      environment:
+        type: string
+        default: rem21-scl-48-production
       helio_execution_id:
         type: string
         default: ''
